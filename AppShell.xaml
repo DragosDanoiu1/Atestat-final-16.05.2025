@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:Atestat4.Views"
+    xmlns:local="clr-namespace:Atestat4"
+    x:Class="Atestat4.AppShell"
+    Shell.FlyoutBehavior="Flyout"
+    Title="Atestat4">
+
+    <ShellContent
+        Title="SignIn"
+        ContentTemplate="{DataTemplate local:SignInPage}"
+        Route="signin"
+        IsVisible="True"/>
+
+    <ShellContent
+        Title="Register"
+        ContentTemplate="{DataTemplate local:RegisterPage}"
+        Route="register"
+        IsVisible="True"/>
+
+     <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate views:NewPage1}"
+        Route="home" />
+    
+    <ShellContent
+        Title="Add Client"
+        ContentTemplate="{DataTemplate views:AddClientPage}"
+        Route="addclient"/>
+
+    <ShellContent 
+        Title="Chat"
+        ContentTemplate="{DataTemplate views:ChatPage}"
+        Route="chat"/>
+
+    <ShellContent
+    Title="Client Page"
+    ContentTemplate="{DataTemplate views:ClientPage}"
+    Route="clientpage" />
+
+</Shell>

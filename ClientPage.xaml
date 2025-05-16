@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Atestat4.Views.ClientPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Client Page"
+    BackgroundColor="White">
+
+    <Grid ColumnDefinitions="200, *" RowDefinitions="Auto, Auto, *, Auto">
+        <!-- SIDEBAR (copiat din NewPage1) -->
+        <StackLayout
+      Grid.Row="0" Grid.Column="0" Grid.RowSpan="4"
+      BackgroundColor="#007ACC"
+      Padding="20" Spacing="30">
+
+            <Label Text="HOME PAGE"
+            FontAttributes="Bold"
+            FontSize="23"
+            TextColor="White">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnHomeTapped" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Text="CLIENT PAGE"   FontAttributes="Bold" FontSize="23" TextColor="White"/>
+            <Label Text="AI CHAT PAGE"  FontAttributes="Bold" FontSize="23" TextColor="White">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnChatTapped" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Text="SIGN OUT"      FontAttributes="Bold" FontSize="23" TextColor="White">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnSignOutTapped" />
+                </Label.GestureRecognizers>
+            </Label>
+            <BoxView Color="Transparent" VerticalOptions="EndAndExpand"/>
+            <Image Source="dia_grouplogo.png" Aspect="AspectFit" HeightRequest="725" WidthRequest="200"/>
+        </StackLayout>
+
+        <!-- LINIA 1: Entry + Buton -->
+        <HorizontalStackLayout
+      Grid.Row="0" Grid.Column="1"
+      Padding="20" Spacing="10">
+            <Entry
+        x:Name="SearchEntry"
+        Placeholder="Enter Client name for more details"
+        TextColor="Black"
+        HorizontalOptions="FillAndExpand"/>
+            <Button
+        Text="Go"
+        Clicked="OnSearchClicked"/>
+        </HorizontalStackLayout>
+
+        <!-- LINIA 2: separator -->
+        <BoxView
+      Grid.Row="1" Grid.Column="1"
+      HeightRequest="1" Color="Black"
+      HorizontalOptions="Fill"/>
+
+        <!-- LINIA 3: detalii (scrollabil dacă e cazul) -->
+        <ScrollView
+      Grid.Row="2" Grid.Column="1"
+      Padding="20">
+            <VerticalStackLayout x:Name="DetailsContainer" Spacing="15"/>
+        </ScrollView>
+
+        <!-- LINIA 4: footer simplu -->
+        <Label
+      Grid.Row="3" Grid.Column="1"
+      Text="Est. 2025 by DIA Group."
+      HorizontalOptions="Center"
+      TextColor="Gray"
+      Margin="0,20"/>
+    </Grid>
+</ContentPage>

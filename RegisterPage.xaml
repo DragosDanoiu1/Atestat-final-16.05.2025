@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Atestat4.RegisterPage"
+    Title="Register Page"
+    BackgroundColor="White">
+
+    <ScrollView>
+        <VerticalStackLayout
+      WidthRequest="400"
+      VerticalOptions="Center"
+      HorizontalOptions="Center"
+      Spacing="20"
+      Padding="20">
+
+            <!-- Titlu -->
+            <Label
+        Text="Register Page"
+        FontSize="36"
+        FontAttributes="Bold"
+        TextColor="#007ACC"
+        HorizontalOptions="Center" />
+
+            <!-- Full Name -->
+            <Frame
+        Padding="0"
+        HasShadow="False"
+        BorderColor="#CCCCCC"
+        CornerRadius="8"
+        BackgroundColor="White"
+        WidthRequest="300"
+        HeightRequest="50">
+                <Entry
+          x:Name="FullName"
+          Placeholder="Please enter your full name"
+          Margin="10,0"
+          BackgroundColor="Transparent"
+          TextColor="Black"
+          TextChanged="FullName_TextChanged" />
+            </Frame>
+            <Label
+        x:Name="NameValidationLabel"
+        Text="Please enter your last name, followed by a space and your first name"
+        FontSize="14"
+        TextColor="Gray"
+        IsVisible="False"
+        HorizontalOptions="Center"
+        WidthRequest="300"
+        HorizontalTextAlignment="Center" />
+
+            <!-- Email -->
+            <Frame
+        Padding="0"
+        HasShadow="False"
+        BorderColor="#CCCCCC"
+        CornerRadius="8"
+        BackgroundColor="White"
+        WidthRequest="300"
+        HeightRequest="50">
+                <Entry
+          x:Name="Email"
+          Placeholder="Enter your email"
+          Margin="10,0"
+          BackgroundColor="Transparent"
+          TextColor="Black"
+          TextChanged="Email_TextChanged" />
+            </Frame>
+            <Label
+        x:Name="EmailValidationLabel"
+        Text="Please enter a valid email address"
+        FontSize="14"
+        TextColor="Gray"
+        IsVisible="False"
+        HorizontalOptions="Center"
+        WidthRequest="300"
+        HorizontalTextAlignment="Center" />
+
+            <!-- Password -->
+            <Frame
+        Padding="0"
+        HasShadow="False"
+        BorderColor="#CCCCCC"
+        CornerRadius="8"
+        BackgroundColor="White"
+        WidthRequest="300"
+        HeightRequest="50">
+                <Grid ColumnDefinitions="*,Auto">
+                    <Entry
+            x:Name="Password"
+            Placeholder="Enter your password"
+            IsPassword="True"
+            Margin="10,0"
+            BackgroundColor="Transparent"
+            TextColor="Black"
+            TextChanged="Password_TextChanged"
+            Grid.Column="0" />
+                    <Button
+            x:Name="TogglePasswordVisibilityButton"
+            Clicked="TogglePasswordVisibilityButton_Clicked"
+            BackgroundColor="Transparent"
+            ImageSource="eye_on.png"
+            Grid.Column="1"
+            WidthRequest="40"
+            Margin="0,0,10,0" />
+                </Grid>
+            </Frame>
+            <Label
+        x:Name="PasswordValidationLabel"
+        Text="Password must be ≥5 chars, include number and special char."
+        FontSize="14"
+        TextColor="Gray"
+        IsVisible="False"
+        HorizontalOptions="Center"
+        WidthRequest="300"
+        HorizontalTextAlignment="Center" />
+
+            <!-- Confirm Password -->
+            <Frame
+        Padding="0"
+        HasShadow="False"
+        BorderColor="#CCCCCC"
+        CornerRadius="8"
+        BackgroundColor="White"
+        WidthRequest="300"
+        HeightRequest="50">
+                <Entry
+          x:Name="CheckPassword"
+          Placeholder="Confirm your password"
+          IsPassword="True"
+          Margin="10,0"
+          BackgroundColor="Transparent"
+          TextColor="Black"
+          TextChanged="CheckPassword_TextChanged" />
+            </Frame>
+            <Label
+        x:Name="PasswordMatchLabel"
+        Text="Passwords do not match"
+        FontSize="14"
+        TextColor="Gray"
+        IsVisible="False"
+        HorizontalOptions="Center"
+        WidthRequest="300"
+        HorizontalTextAlignment="Center" />
+
+            <!-- Register Button -->
+            <Button
+        Text="Register"
+        Clicked="RegisterButton_Clicked"
+        WidthRequest="300"
+        HeightRequest="50"
+        BackgroundColor="#4CAF50"
+        TextColor="White"
+        CornerRadius="10"
+        FontAttributes="Bold"
+        HorizontalOptions="Center" />
+
+            <!-- Back to Sign-In -->
+            <Button
+        Text="Have an account? Sign in"
+        Clicked="HaveAccount_Clicked"
+        BackgroundColor="Transparent"
+        TextColor="Gray"
+        FontSize="14"
+        HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Atestat4.SignInPage"
+             Title="Sign In Page"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <ScrollView>
+            <VerticalStackLayout WidthRequest="400"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           Spacing="20">
+
+                <Label Text="Sign-In Page"
+               FontSize="36"
+               FontAttributes="Bold"
+               TextColor="#007ACC"
+               HorizontalOptions="Center" />
+
+                <Frame Padding="0"
+               CornerRadius="5"
+               BorderColor="LightGray"
+               BackgroundColor="White"
+               HasShadow="False"
+               WidthRequest="250"
+               HorizontalOptions="Center">
+                    <Entry x:Name="NameOrEmail"
+                 Placeholder="Please enter your name or email"
+                 TextChanged="Email_TextChanged"
+                 BackgroundColor="Transparent"
+                 TextColor="Black"
+                 Margin="10,0"
+                 ReturnType="Next"
+                 Completed="NameOrEmail_Completed" />
+                </Frame>
+
+                <Frame Padding="0"
+               CornerRadius="5"
+               BorderColor="LightGray"
+               BackgroundColor="White"
+               HasShadow="False"
+               WidthRequest="250"
+               HorizontalOptions="Center">
+                    <Grid WidthRequest="250"
+                ColumnDefinitions="*,Auto">
+                        <Entry x:Name="Password"
+                   Placeholder="Enter your password"
+                   IsPassword="True"
+                   TextChanged="Password_TextChanged"
+                   Grid.Column="0"
+                   BackgroundColor="Transparent"
+                   TextColor="Black"
+                   Margin="10,0"
+                   ReturnType="Go"
+                   Completed="SignIn_Clicked" />
+                        <Button x:Name="TogglePasswordVisibilityButton"
+                    Clicked="TogglePasswordVisibilityButton_Clicked"
+                    BackgroundColor="Transparent"
+                    TranslationX="60"
+                    HorizontalOptions="End"
+                    ImageSource="eye_on.png"/>
+                    </Grid>
+                </Frame>
+
+                <Label x:Name="EmailValidationLabel"
+               Text="Please enter a valid name or email address"
+               FontSize="14"
+               TextColor="#444444"
+               IsVisible="True"
+               HorizontalOptions="Center"
+               WidthRequest="250"
+               HorizontalTextAlignment="Center" />
+
+                <Button Text="Sign-In"
+                Clicked="SignIn_Clicked"
+                WidthRequest="250"
+                HeightRequest="45"
+                BackgroundColor="#4CAF50"
+                TextColor="White"
+                CornerRadius="10"
+                FontAttributes="Bold"
+                HorizontalOptions="Center" />
+
+                <Button Text="Don't have an account? Sign up"
+                FontSize="14"
+                BackgroundColor="Transparent"
+                TextColor="#444444"
+                HorizontalOptions="Center"
+                Clicked="Button_Clicked"/>
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

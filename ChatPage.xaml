@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Atestat4.Views.ChatPage"
+    BackgroundColor="White"
+    Padding="20">
+
+    <!-- 3 rânduri: header, mesaje, input -->
+    <Grid RowDefinitions="Auto,*,Auto">
+
+        <!-- 1) Header cu buton Back + titlu -->
+        <Grid Grid.Row="0" ColumnDefinitions="Auto,*" Padding="0,0,0,10">
+            <Button
+        Text="←"
+        BackgroundColor="#007ACC"
+        TextColor="White"
+        FontAttributes="Bold"
+        FontSize="28"  
+        WidthRequest="40"
+        HeightRequest="50"
+        CornerRadius="20"
+        VerticalOptions="Center"
+        HorizontalOptions="Start"
+        Padding="0"
+        Clicked="OnBackButtonClicked" />
+            <StackLayout Grid.Column="1" Spacing="4" HorizontalOptions="Center">
+                <Label
+          Text="AI Chat"
+          FontSize="36"
+          FontAttributes="Bold"
+          TextColor="#007ACC"
+          HorizontalOptions="Center" />
+                <Label
+          Text="Ask me anything, I’ll try to help 🤖"
+          FontSize="16"
+          TextColor="Gray"
+          HorizontalOptions="Center" />
+            </StackLayout>
+        </Grid>
+
+        <!-- 2) Zona de mesaje -->
+        <ScrollView
+      Grid.Row="1"
+      Margin="0,0,0,10"
+      Orientation="Vertical"
+      HorizontalOptions="FillAndExpand"
+      VerticalOptions="FillAndExpand">
+            <VerticalStackLayout
+        x:Name="MessagesStack"
+        Spacing="12"
+        HorizontalOptions="FillAndExpand"
+        Padding="0,0,0,20" />
+        </ScrollView>
+
+        <!-- 3) Bara de input + buton Send -->
+        <Grid
+      Grid.Row="2"
+      ColumnDefinitions="*,Auto"
+      Margin="0"
+      HorizontalOptions="Center">
+
+            <Frame
+        Grid.Column="0"
+        Padding="0"
+        HasShadow="False"
+        CornerRadius="20"
+        BackgroundColor="#F0F0F0"
+        VerticalOptions="Center"
+        WidthRequest="300"
+        HeightRequest="44">
+                <Entry
+          x:Name="InputEntry"
+          Placeholder="Type your message..."
+          ReturnType="Send"
+          Completed="OnSendClicked"
+          BackgroundColor="Transparent"
+          FontSize="16"
+          TextColor="Black"
+          VerticalOptions="Center"
+          Margin="12,0" />
+            </Frame>
+
+            <Button
+        Grid.Column="1"
+        x:Name="SendButton"
+        Text="Send"
+        WidthRequest="70"
+        HeightRequest="44"
+        BackgroundColor="#007ACC"
+        TextColor="White"
+        FontAttributes="Bold"
+        CornerRadius="22"
+        Margin="8,0,0,0"
+        VerticalOptions="Center"
+        Clicked="OnSendClicked" />
+
+        </Grid>
+
+    </Grid>
+</ContentPage>

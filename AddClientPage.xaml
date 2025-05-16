@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Atestat4.Views.AddClientPage"
+    Title="Add New Client"
+    BackgroundColor="#007ACC"
+    Padding="0">
+
+    <!-- Container unic -->
+    <Grid RowDefinitions="Auto,*,Auto" Padding="10">
+
+        <!-- rând 0: buton Back -->
+        <Button
+      Grid.Row="0"
+      x:Name="BackButton"
+      Text="←"
+      BackgroundColor="White"
+      TextColor="#007ACC"
+      FontAttributes="Bold"
+      FontSize="28"
+      WidthRequest="40"
+      HeightRequest="50"
+      CornerRadius="20"
+      HorizontalOptions="Start"
+      VerticalOptions="Start"
+      Clicked="OnBackButtonClicked" />
+
+        <!-- rând 1: formular scrollabil -->
+        <ScrollView Grid.Row="1" Margin="0,10,0,10">
+            <StackLayout Spacing="20" Padding="0,0,0,20">
+
+                <!-- Titlu pagină -->
+                <Label
+          Text="Add New Client"
+          FontSize="30"
+          FontAttributes="Bold"
+          TextColor="White"
+          HorizontalOptions="Center" />
+
+                <BoxView HeightRequest="1" Color="White" HorizontalOptions="FillAndExpand" />
+
+                <!-- Formular 3×3 -->
+                <Grid ColumnSpacing="15" RowSpacing="15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <!-- Row 0 -->
+                    <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="White" CornerRadius="8" HasShadow="False">
+                        <Entry x:Name="CompanyEntry" Placeholder="Enter Company Name" TextColor="Black" PlaceholderColor="LightGray" Margin="10,0"/>
+                    </Frame>
+                    <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="White" CornerRadius="8" HasShadow="False">
+                        <Entry x:Name="IndustryEntry" Placeholder="Enter Industry" TextColor="Black" PlaceholderColor="LightGray" Margin="10,0"/>
+                    </Frame>
+                    <Frame Grid.Row="0" Grid.Column="2" BackgroundColor="White" CornerRadius="8" HasShadow="False">
+                        <Entry x:Name="CollaborationDateEntry" Placeholder="Enter collaboration start date" TextColor="Black" PlaceholderColor="LightGray" Margin="10,0"/>
+                    </Frame>
+
+                    <!-- Row 1 -->
+                    <Frame Grid.Row="1" Grid.Column="0" BackgroundColor="White" CornerRadius="8" HasShadow="False">
+                        <Entry x:Name="RevenueEntry" Placeholder="Enter annual revenue" TextColor="Black" PlaceholderColor="LightGray" Margin="10,0"/>
+                    </Frame>
+                    <Frame Grid.Row="1" Grid.Column="1" BackgroundColor="White" CornerRadius="8" HasShadow="False">
+                        <Entry x:Name="ProfitEntry" Placeholder="Enter annual profit" TextColor="Black" PlaceholderColor="LightGray" Margin="10,0"/>
+                    </Frame>
+                    <Frame Grid.Row="1" Grid.Column="2" BackgroundColor="White" CornerRadius="8" HasShadow="False">
+                        <Entry x:Name="ServicesEntry" Placeholder="Enter Provided Services" TextColor="Black" PlaceholderColor="LightGray" Margin="10,0"/>
+                    </Frame>
+
+                    <!-- Row 2 -->
+                    <Frame Grid.Row="2" Grid.Column="0" BackgroundColor="White" CornerRadius="8" HasShadow="False">
+                        <Entry x:Name="DealValueEntry" Placeholder="Enter Deal Value (RON)" TextColor="Black" PlaceholderColor="LightGray" Margin="10,0"/>
+                    </Frame>
+                    <Frame Grid.Row="2" Grid.Column="1" BackgroundColor="White" CornerRadius="8" HasShadow="False">
+                        <Entry x:Name="OwnersCountEntry" Placeholder="Enter number of owners" TextColor="Black" PlaceholderColor="LightGray" Margin="10,0"/>
+                    </Frame>
+                    <Frame Grid.Row="2" Grid.Column="2" BackgroundColor="White" CornerRadius="8" HasShadow="False">
+                        <Entry x:Name="OwnerNameEntry" Placeholder="Enter owner’s full name" TextColor="Black" PlaceholderColor="LightGray" Margin="10,0"/>
+                    </Frame>
+                </Grid>
+
+                <BoxView HeightRequest="1" Color="White" HorizontalOptions="FillAndExpand" />
+
+                <Button
+          Text="Save Client"
+          BackgroundColor="#4CAF50"
+          TextColor="White"
+          CornerRadius="8"
+          HeightRequest="50"
+          FontAttributes="Bold"
+          Clicked="OnSaveClientClicked"
+          HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+        </ScrollView>
+
+        <!-- rând 2: footer -->
+        <Label
+      Grid.Row="2"
+      Text="Est. 2025 by DIA Group."
+      TextColor="White"
+      HorizontalOptions="Center"
+      Padding="0,10"/>
+
+    </Grid>
+</ContentPage>
+
+
